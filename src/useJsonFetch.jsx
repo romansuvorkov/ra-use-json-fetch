@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-export default function useJsonFetch(url, interval, initialData) {
+export default function useJsonFetch(url, initialData) {
 const [data, setData] = useState(initialData);
 const [isLoading, setLoading] = useState(false);
 const [hasError, setError] = useState(null);
@@ -22,8 +22,6 @@ useEffect(() => {
         }
     };
     fetchData();
-    const intervalId = setInterval(fetchData, interval);
-    return () => clearInterval(intervalId);
 }, [url])
 
 return [data, isLoading, hasError];

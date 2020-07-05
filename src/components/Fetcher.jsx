@@ -3,8 +3,7 @@ import useJsonFetch from "../useJsonFetch";
 
 function Fetcher(props) {
     const { url, header } = props;
-    const [data, loading, error] = useJsonFetch(url, 5000, []);
-    const dataCheck = data.status ? true : false;
+    const [data, loading, error] = useJsonFetch(url, []);
 
     return (
         <div className="fetcher_block"> 
